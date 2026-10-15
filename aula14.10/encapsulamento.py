@@ -15,6 +15,16 @@ class Cofre:
         print(f"Senha invalida! Você exedeu a suas tentativas {self.__tentativa}")
         return False 
 
+    def trocar_senha(self, senha_atual:str, nova_senha:str) -> bool:
+       """Trocar a senha do cofre"""
+       if senha_atual == self.__senha:
+          self.__senha = nova_senha
+          print("Senha alterada")
+          return True
+
+       print("Senha informada invalida")
+       return False
+
 
 cofre = Cofre("abc123")
 cofre.abrir("errado")
