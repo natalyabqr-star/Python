@@ -1,22 +1,18 @@
 class Pessoa:
-     def __init__(self, nome: str, idade:int) -> None
-     self.__nome = nome
-     self.__idade = idade
+    
+     @property
+     def idade(self) -> int:
+          """Getter: acesso a __idade"""
+          print("Passou no getter da idade")
+          return self.__idade
+     @idade.setter
+     def idade(self, valor:int) -> None:
+          """Setter: mudar o valor de __idade"""
+          print("Passou no setter de idade")
+          if valor < 0:
+               raise TypeError("Idade impossivel")
+          if valor > 100 ("voce está de brincadeira comigo")
 
-
-    @property
-    def nome(self) -> str:
-        """Getter: acesso ao __nome"""
-        return self.__idade
-
-    def idade(self, valor: int) -> None:
-     """Setter: muda o valor de __idade"""
-
-     if valor < 0:
-         raise TypeError("idade impossivel")
-
-     if valor < 100:
-         raise TypeError("voce ta de brincadeira") 
 
 
 p = Pessoa("teste novo", 100)
